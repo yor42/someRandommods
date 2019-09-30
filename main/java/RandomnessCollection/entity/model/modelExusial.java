@@ -3,6 +3,7 @@ package RandomnessCollection.entity.model;
 import net.minecraft.client.model.ModelBase;
 import net.minecraft.client.model.ModelRenderer;
 import net.minecraft.entity.Entity;
+import net.minecraft.util.math.MathHelper;
 
 /**
  * Exusial - yor42
@@ -130,4 +131,21 @@ public class modelExusial extends ModelBase {
         modelRenderer.rotateAngleY = y;
         modelRenderer.rotateAngleZ = z;
     }
+    
+    @Override
+    public void setRotationAngles(float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch, float scaleFactor, Entity entityIn)
+    {
+    	
+//well at least she could walk ya dum dum!
+    	this.LeftUpperLeg.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount;
+    	this.RightUpperLeg.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F + (float)Math.PI) * 1.4F * limbSwingAmount;
+    	
+//애니메이션이라니 어림도 없다 암! ARRRRMMMM!
+    	this.LeftUpperArm.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F) * 0.8F * limbSwingAmount;
+    	this.RightUpperArm.rotateAngleX = MathHelper.cos(limbSwing * 0.6662F + (float) Math.PI) * 0.8F * limbSwingAmount;
+    	
+    	this.Head.rotateAngleX = headPitch * 0.017453292F;
+    	this.Head.rotateAngleY = netHeadYaw * 0.017453292F;
+    }
+    
 }

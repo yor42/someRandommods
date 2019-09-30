@@ -11,9 +11,6 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import RandomnessCollection.proxy.CommonProxy;
 
-import net.minecraftforge.client.event.ModelRegistryEvent;
-import net.minecraftforge.event.RegistryEvent;
-
 @Mod(modid=Defined.ID, name=Defined.Name,version=Defined.Name )
 public class Main 
 {
